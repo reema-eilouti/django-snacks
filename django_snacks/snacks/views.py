@@ -7,9 +7,7 @@ from django.views.generic import TemplateView
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the snacks index.")
-
-
+    return HttpResponse("Hello, world. You're at the snacks index. Go to /home/ to view the main page of website.")
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
