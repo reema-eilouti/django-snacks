@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from . import models
+from django.urls import reverse_lazy
 
 
 # Create your views here.
@@ -24,3 +25,18 @@ class SnackListView(ListView):
 class SnackDetailView(DetailView):
     template_name = 'snack_detail.html'
     model = models.Snack
+
+class SnackCreateView(CreateView):
+    template_name = 'snack_create.html'
+    model = models.Snack
+    fields = ['name', 'purchaser', 'description']
+
+class SnackUpdateView(UpdateView):
+    template_name = 'snack_update.html'
+    model = models.Snack
+    fields = ['name', 'purchaser', 'description']
+
+class SnackDeleteView(DeleteView):
+    template_name = 'snack_delete.html'
+    model = models.Snack
+    success_url = reverse_lazy('snack_list')

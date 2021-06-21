@@ -5,6 +5,10 @@
 
 <hr>
 
+<button><a href="{% url 'snack_create' %}">Create Snack</a></button>
+
+<br><br>
+
 {% for snack in object_list %}
 <h2>{{ snack.name }}</h2> <a href="{% url 'snack_detail' snack.pk %}">Snack Details</a>
 <br><br>

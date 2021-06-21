@@ -10,4 +10,9 @@
 <br><br>
 <h4>Snack Discription: </h4>{{snack.description}}
 
+<br><br><br>
+
+<button><a href = "{% url 'snack_update' snack.pk %}">Update Snack</a></button>
+<button><a href = "{% url 'snack_delete' snack.pk %}">Delete Snack</a></button>
+
 {% endblock content %}
