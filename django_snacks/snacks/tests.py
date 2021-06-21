@@ -27,3 +27,16 @@ class thingsTests(SimpleTestCase):
         response = self.client.get(url)
         self.assertTemplateUsed(response, 'about.html')
         self.assertTemplateUsed(response, 'base.html')
+
+
+class snacks_tests(TestCase):
+
+    def test_snack_list(self):
+
+        url = reverse('snack_list')
+
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code , 200)
+        
+        self.assertTemplateUsed(response, 'snack_list.html')

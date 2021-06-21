@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView, DetailView
+from . import models
 
 
 # Create your views here.
@@ -14,3 +15,12 @@ class HomePageView(TemplateView):
 
 class AboutView(TemplateView):
     template_name = 'about.html'
+    model = models.Snack
+
+class SnackListView(ListView):
+    template_name = 'snack_list.html'
+    model = models.Snack
+
+class SnackDetailView(DetailView):
+    template_name = 'snack_detail.html'
+    model = models.Snack
