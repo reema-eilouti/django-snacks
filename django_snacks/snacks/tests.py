@@ -40,3 +40,45 @@ class snacks_tests(TestCase):
         self.assertEqual(response.status_code , 200)
         
         self.assertTemplateUsed(response, 'snack_list.html')
+
+
+
+    def test_snack_create(self):
+
+        url = reverse('snack_create')
+
+        response = self.client.get(url)
+
+        self.assertEquals(response.status_code, 200)
+
+        self.assertTemplateUsed(response, 'base.html')
+
+        self.assertTemplateUsed(response, 'snack_create.html')
+
+
+
+    # def test_snack_update(self):
+
+    #     url = reverse('snack_update', args = '1')
+
+    #     response = self.client.get(url)
+
+    #     self.assertEquals(response.status_code, 200)
+
+    #     self.assertTemplateUsed(response, 'base.html')
+
+    #     self.assertTemplateUsed(response, 'snack_update.html')
+
+
+
+    # def test_snack_delete(self):
+
+    #     url = reverse('snack_delete', args = '1')
+
+    #     response = self.client.get(url)
+
+    #     self.assertEquals(response.status_code, 200)
+
+    #     self.assertTemplateUsed(response, 'base.html')
+
+    #     self.assertTemplateUsed(response, 'snack_delete.html')
